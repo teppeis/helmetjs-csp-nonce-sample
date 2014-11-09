@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1
+    span= "Test for "
+    a(href="https://github.com/teppeis/csp/tree/nonce")= "helmetjs/csp with nonce-value"
+  p
+    script(nonce=cspNonce)= "document.write('This script element has valid nonce.')"
+  p
+    script(nonce="invalidnonce")= "document.write('This script element has invalid nonce.')"
