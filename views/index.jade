@@ -8,3 +8,8 @@ block content
     script(nonce=cspNonce)= "document.write('This script element has valid nonce.')"
   p
     script(nonce="invalidnonce")= "document.write('This script element has invalid nonce.')"
+  div
+    div
+      button(onclick="alert('onclick handler is executed!')")= '<button onclick="alert()">...</button>'
+    div
+      a(href="javascript:alert('javascript scheme in href is executed!')")= '<a href="javascript:alert()">...</a>'
